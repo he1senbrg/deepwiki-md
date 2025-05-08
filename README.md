@@ -42,7 +42,6 @@ python main.py python/cpython
 python main.py python/cpython custom_directory
 ```
 
----
 
 # Contributing
 
@@ -61,7 +60,11 @@ After making your changes, run the following command to format your code:
 black .
 ```
 
----
+# Disclaimer
+
+This project is provided as-is, with no guarantees or warranties of any kind. I take no responsibility for how it is used, or any issues that may arise from its use.
+
+If you use this tool to generate documentation for your project, please include a credit to [DeepWiki](https://deepwiki.com/) in your project's README.
 
 # License
 
