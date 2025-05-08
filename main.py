@@ -70,6 +70,11 @@ def write_md(out_dir, page_heading, formatted_qk_nav, formatted_toc, markdown_co
         )
 
 
+def write_docs_page(out_dir, formatted_qk_nav):
+    with open(rf"{out_dir}/docs.md", "w") as file:
+        file.write(f"# Documentation\n\n{formatted_qk_nav}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Converts the DeepWiki page of a given project to markdown."
@@ -105,6 +110,8 @@ def main():
         page_paths, qk_nav_contents = parse_sidebar(sidebar)
 
         formatted_qk_nav = format_quick_navigation(qk_nav_contents)
+
+        write_docs_page(out_dir, formatted_qk_nav)
 
         for path in page_paths:
             content = fetch_from_deepwiki(
