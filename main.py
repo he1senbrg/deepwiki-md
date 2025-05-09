@@ -43,7 +43,8 @@ def format_quick_navigation(qk_nav_contents):
     for qk_nav_item in qk_nav_contents:
         qk_nav_item_split = qk_nav_item.split("-", 1)
         indent_count = len(qk_nav_item_split[0].split("."))
-        formatted_qk_nav += f"{'  ' * (indent_count - 1)}- [{qk_nav_item_split[-1]}]({qk_nav_item}.md)\n"
+        qk_nav_item_formatted = qk_nav_item_split[-1].replace("-", " ").title()
+        formatted_qk_nav += f"{'  ' * (indent_count - 1)}- [{qk_nav_item_formatted}]({qk_nav_item}.md)\n"
 
     return formatted_qk_nav
 
@@ -62,7 +63,7 @@ def format_table_of_contents(markdown_content):
 
 
 def write_md(out_dir, page_heading, formatted_qk_nav, formatted_toc, markdown_content):
-    page_title = re.sub(r"[\d\.]", "", page_heading).replace("-", " ")
+    page_title = page_heading.split("-", 1)[-1].replace("-", " ")
 
     with open(rf"{out_dir}/{page_heading}.md", "w") as file:
         file.write(

@@ -4,6 +4,8 @@
 
 This project provides a command-line tool to convert DeepWiki pages into Markdown files. It fetches content from a DeepWiki page for a specified project (in the format `owner/repo`) and generates Markdown files for each page.
 
+**Note:** Your repository must already be indexed on [DeepWiki](https://deepwiki.com/) for this tool to work.
+
 ## Installation
 
 To install this project, simply clone the repository and install the required dependencies:
